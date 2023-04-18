@@ -1,0 +1,5 @@
+package JAVAPractice;
+
+ class dummy {
+
+}

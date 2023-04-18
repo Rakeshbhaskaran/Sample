@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="rak.assert1">
+      <class name="rak.openDebuggerChrome">
         <methods>
-          <include name="ast"/>
+          <include name="rak"/>
         </methods>
-      </class> <!-- rak.assert1 -->
+      </class> <!-- rak.openDebuggerChrome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

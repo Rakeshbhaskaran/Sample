@@ -1,7 +1,6 @@
 package Test;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeUnit;
 
 
 public class MillisecondsConverter {
