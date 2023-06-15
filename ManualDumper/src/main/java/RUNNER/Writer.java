@@ -28,7 +28,7 @@ public class Writer {
 		WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver(options);
 		driver.manage().window().maximize();
-		String url="https://app.fireflink.com/testdevelopment/Script/Root%20Module/Home_Web/HM006_Verify%20Social%20Media%20Handles%20Of%20Aakash%20Are%20Displayed/Manual%20Test%20Case?manualScriptId=SCR1036&moduleId=MOD1002&scriptId=SCR1006";
+		String url="https://app.fireflink.com/testdevelopment/Script/Screens/SC001_Organization%20Activity/Manual%20Test%20Case?manualScriptId=SCR1004&moduleId=MOD1006&scriptId=SCR1002";
 		
 		driver.get(url);
 		Thread.sleep(3000);
@@ -40,7 +40,7 @@ public class Writer {
 	@DataProvider(name = "data")
 	public Object[][] data() throws EncryptedDocumentException, IOException {
 		
-		Object[][] data=helper1.readExcel("C:\\Rakesh\\FireFlink\\PAPOC\\Aakash\\MTC.xlsx", "HM006");
+		Object[][] data=helper1.readExcel("C:\\Rakesh\\FireFlink\\PAPOC\\Aakash\\MTC.xlsx", "SC001");
 		return data;
 	}
 	

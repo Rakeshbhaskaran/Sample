@@ -15,6 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,9 +30,12 @@ public class Reader {
 		options.addArguments("user-data-dir=C:\\\\Rakesh\\\\FireFlink\\\\chromeDebug1\\\\ff");
 		options.addArguments("start-maximized");
 		WebDriver driver = new ChromeDriver(options);
-		String url="https://app.fireflink.com/testdevelopment/Script/Home_Web/HM006_Verify%20Social%20Media%20Handles%20Of%20Aakash%20Are%20Displayed/Steps?scriptId=SCR1006&moduleId=MOD1002";
+		String url="https://app.fireflink.com/testdevelopment/Script/Screens/SC002_Value%20Credit%20Note%20Debit%20Note/Steps?scriptId=SCR1005&moduleId=MOD1006";
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[@id='step-break']")));
+
 		List<WebElement>steps= driver.findElements(By.xpath("//span[@id='step-break']"));
 		WebElement testCase= driver.findElement(By.xpath("//label[@class='project_label flex-auto']"));
 		String testCaseid=testCase.getText().substring(0, 5);
@@ -40,8 +45,8 @@ public class Reader {
 		}
 		XSSFWorkbook book = new XSSFWorkbook();
 		Sheet sheet=book.createSheet(testCaseid);
-		sheet.createRow(1).createCell(0).setCellValue("Sl no");
-		sheet.createRow(2).createCell(1).setCellValue("Test data");
+//		sheet.createRow(1).createCell(0).setCellValue("Sl no");
+//		sheet.createRow(2).createCell(1).setCellValue("Test data");
 		sheet.createRow(0).createCell(2).setCellValue("Test steps");
 		System.out.println(steps.size());
 		for(int i=0;i<steps.size();i++) {

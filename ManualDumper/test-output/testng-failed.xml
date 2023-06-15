@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RUNNER.Writer">
+      <class name="RUNNER.Reader">
         <methods>
-          <include name="opener"/>
-          <include name="filler"/>
+          <include name="write"/>
         </methods>
-      </class> <!-- RUNNER.Writer -->
+      </class> <!-- RUNNER.Reader -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
