@@ -25,17 +25,17 @@ public class Reader {
 	
 	@Test
 	public static void write() throws IOException, InterruptedException {
-		WebDriverManager.chromedriver().setup();
+//		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("user-data-dir=C:\\\\Rakesh\\\\FireFlink\\\\chromeDebug1\\\\ff");
 		options.addArguments("start-maximized");
 		WebDriver driver = new ChromeDriver(options);
-		String url="https://app.fireflink.com/testdevelopment/Script/Screens/SC002_Value%20Credit%20Note%20Debit%20Note/Steps?scriptId=SCR1005&moduleId=MOD1006";
+		String url="https://app.fireflink.com/testdevelopment/Script/Achieve_MOD1006/AC009_Verify%20user%20is%20able%20to%20download%20the%20uploaded%20file_SCR1067/Steps?scriptId=SCR1067&moduleId=MOD1006&manualScriptId=SCR1077";
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[@id='step-break']")));
-
+		Thread.sleep(6000);
 		List<WebElement>steps= driver.findElements(By.xpath("//span[@id='step-break']"));
 		WebElement testCase= driver.findElement(By.xpath("//label[@class='project_label flex-auto']"));
 		String testCaseid=testCase.getText().substring(0, 5);

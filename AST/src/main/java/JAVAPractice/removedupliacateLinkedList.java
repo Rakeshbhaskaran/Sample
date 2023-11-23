@@ -19,7 +19,7 @@ public class removedupliacateLinkedList {
 		System.out.println(a);
 		
 		HashSet b = new LinkedHashSet(a);
-		b.add(5);
+//		b.add(5);
 		
 		System.out.println(b);
 		
